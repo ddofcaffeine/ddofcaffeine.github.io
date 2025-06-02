@@ -38,7 +38,11 @@ for i in range(len(data['Comments'])):
     rating = data['Rating'][i]
     description = data['Comments'][i]
     link = data['Weblinks'][i]
-    cafesMap.add_child(folium.Marker(location = data['Coordinates'][i], icon= folium.Icon(color="lightred", icon = 'mug-hot', prefix = 'fa'), popup = "<b>" + name + "</b>" + "<br>" + "<br>" 
+    if rating== "5.0/5":
+        colour = "orange"
+    else:
+        colour = "lightred"
+    cafesMap.add_child(folium.Marker(location = data['Coordinates'][i], icon= folium.Icon(color=colour, icon = 'mug-hot', prefix = 'fa'), popup = "<b>" + name + "</b>" + "<br>" + "<br>"
                                     + rating + "<br>" + description + "<br>" + "<br>" + '<a href="' + link + 'target="_blank">' + link + '</a>'))
     
     

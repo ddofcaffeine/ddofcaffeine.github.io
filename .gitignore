@@ -6,3 +6,10 @@
 
 #ignore the jupyter notebook checkpoints
 *.ipynb_checkpoints/
+
+#ignore venv
+
+/venv
+
+#ignore IntelliJ stuff
+/.idea
